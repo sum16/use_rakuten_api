@@ -1,0 +1,13 @@
+<%= form_tag(books_search_path, method: :get) do %>
+  <%= text_field_tag :title, @title %>
+  <%= button_tag type: "submit" %>
+<% end %>
+
+<% if @books %>
+  <% @books.each do |book| %>
+    <%= image_tag book.image_url %>
+    <%= book.title %>
+    <%= book.author %>
+    <%= book.item_caption %>    
+  <% end %>
+<% end %>
