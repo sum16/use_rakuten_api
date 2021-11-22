@@ -11,7 +11,7 @@ module RakutenBooksSearch
     if @title.present?
       # resultsに楽天APIから取得したjsonデータを格納
       # 書籍のタイトルを検索して、一致するデータを格納するように設定
-      results = RakutenWebService::Books::Book.search({title: @title})
+      results = RakutenWebService::Books::Book.search({keyword: @title})
         
       # @booksに格納
       results.each do |result|
